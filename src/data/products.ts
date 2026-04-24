@@ -1,6 +1,6 @@
 import type { Product } from '../types';
 
-const img = (id: string) => `https://picsum.photos/seed/${id}/600/600`;
+const img = (id: string) => `${import.meta.env.BASE_URL}${Number(id.slice(1))}.png`;
 
 export const products: Product[] = [
   {
