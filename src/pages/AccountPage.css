@@ -1,0 +1,197 @@
+.acc-profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  margin: 12px 0 16px;
+  flex-wrap: wrap;
+}
+
+.acc-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--neon), var(--accent-cyan));
+  color: #0b1020;
+  font-weight: 900;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--glow-soft);
+}
+
+.acc-profile-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.acc-name {
+  color: var(--accent-cyan);
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.acc-contact {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.acc-tier-badge {
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.acc-tier-bronze {
+  background: #7c3a0e;
+  color: #fbbf77;
+}
+.acc-tier-silver {
+  background: #334266;
+  color: #cbd5ff;
+  border: 1px solid #8ea0c8;
+}
+.acc-tier-gold {
+  background: #b8860b;
+  color: #1a1100;
+  box-shadow: 0 0 12px rgba(255, 214, 10, 0.5);
+}
+
+.acc-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 520px) {
+  .acc-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.acc-stat {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  text-align: center;
+}
+
+.acc-stat-num {
+  color: var(--accent-yellow);
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.acc-stat-label {
+  color: var(--text-muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+.acc-progress {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 18px;
+}
+
+.acc-progress-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.acc-progress-head strong {
+  color: var(--neon);
+}
+
+.acc-progress-bar {
+  height: 10px;
+  background: var(--bg-chip);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.acc-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--neon), var(--accent-cyan));
+  box-shadow: var(--glow-soft);
+  transition: width 0.3s;
+}
+
+.acc-orders-title {
+  color: var(--accent-cyan);
+  font-size: 18px;
+  font-weight: 800;
+  margin: 8px 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.acc-orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.acc-order {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+
+.acc-order-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.acc-order-id {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.acc-order-date {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.acc-order-total {
+  color: var(--accent-yellow);
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.acc-order-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.acc-order-items li {
+  padding: 2px 0;
+}

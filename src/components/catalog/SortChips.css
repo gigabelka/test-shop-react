@@ -1,0 +1,48 @@
+.sortchips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  padding: 4px 0 16px;
+}
+
+.sortchip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--bg-chip);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.15s;
+}
+
+.sortchip:hover {
+  color: var(--text);
+}
+
+.sortchip.is-active {
+  background: var(--accent-cyan);
+  color: #0b1020;
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.45);
+}
+
+.sortchip-icon {
+  font-size: 13px;
+}
+
+@media (max-width: 420px) {
+  .sortchip-label {
+    display: none;
+  }
+  .sortchip {
+    padding: 8px 12px;
+  }
+  .sortchip-icon {
+    font-size: 15px;
+  }
+}
