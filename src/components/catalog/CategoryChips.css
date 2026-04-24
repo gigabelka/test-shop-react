@@ -26,7 +26,7 @@
 
 .chip.is-active {
   background: var(--neon);
-  color: #0b1020;
+  color: var(--on-neon);
   border-color: var(--neon);
   box-shadow: var(--glow-soft);
 }

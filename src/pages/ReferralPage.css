@@ -62,7 +62,7 @@
   padding: 10px 18px;
   border-radius: 10px;
   background: var(--neon);
-  color: #0b1020;
+  color: var(--on-neon);
   font-weight: 800;
   font-size: 13px;
   box-shadow: var(--glow-soft);
@@ -73,7 +73,7 @@
   padding: 14px;
   border-radius: 12px;
   background: var(--neon);
-  color: #0b1020;
+  color: var(--on-neon);
   font-weight: 800;
   font-size: 15px;
   letter-spacing: 0.5px;
@@ -135,7 +135,7 @@
   height: 28px;
   border-radius: 50%;
   background: var(--neon);
-  color: #0b1020;
+  color: var(--on-neon);
   font-weight: 900;
   display: flex;
   align-items: center;

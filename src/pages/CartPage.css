@@ -141,7 +141,7 @@
 
 .cart-checkout {
   background: var(--neon);
-  color: #0b1020;
+  color: var(--on-neon);
   padding: 12px 22px;
   border-radius: 12px;
   font-weight: 800;

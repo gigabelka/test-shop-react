@@ -56,7 +56,7 @@
 
 .rev-filter.is-active {
   background: var(--neon);
-  color: #0b1020;
+  color: var(--on-neon);
   border-color: var(--neon);
   box-shadow: var(--glow-soft);
 }
@@ -104,7 +104,7 @@
   height: 40px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--neon), var(--accent-cyan));
-  color: #0b1020;
+  color: var(--on-neon);
   font-weight: 900;
   font-size: 16px;
   display: flex;
@@ -162,7 +162,7 @@
   display: block;
   margin: 8px auto 0;
   background: var(--neon);
-  color: #0b1020;
+  color: var(--on-neon);
   padding: 14px 24px;
   border-radius: 12px;
   font-weight: 800;

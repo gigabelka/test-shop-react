@@ -2,9 +2,15 @@
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(11, 16, 32, 0.85);
+  background: var(--bg-topbar);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
+}
+
+.topbar-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
 .topbar-inner {
@@ -49,6 +55,6 @@
 
 .lang-pill.is-active {
   background: var(--neon);
-  color: #0b1020;
+  color: var(--on-neon);
   box-shadow: var(--glow-soft);
 }

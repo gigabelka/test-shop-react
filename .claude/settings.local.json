@@ -4,7 +4,8 @@
       "Bash(npm install *)",
       "Bash(npm view *)",
       "Bash(npm run *)",
-      "Bash(taskkill //F //FI \"WINDOWTITLE eq *vite*\")"
+      "Bash(taskkill //F //FI \"WINDOWTITLE eq *vite*\")",
+      "Bash(npx tsc *)"
     ]
   }
 }

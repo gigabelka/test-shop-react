@@ -26,7 +26,7 @@
 
 .sortchip.is-active {
   background: var(--accent-cyan);
-  color: #0b1020;
+  color: var(--on-neon);
   border-color: var(--accent-cyan);
   box-shadow: 0 0 10px rgba(56, 189, 248, 0.45);
 }
