@@ -25,7 +25,7 @@ export function ReferralPage() {
   const share = async () => {
     if (navigator.share) {
       try {
-        await navigator.share({ title: 'GELATO', text: 'Invite', url: refLink });
+        await navigator.share({ title: 'SnowdropSHOP', text: 'Invite', url: refLink });
       } catch {
         // noop
       }

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from '../../i18n/useTranslation';
 import { useTheme } from '../../context/ThemeContext';
+import logo from '../../assets/snowdrop-logo.svg';
 import './TopBar.css';
 
 export function TopBar() {
@@ -10,9 +11,8 @@ export function TopBar() {
   return (
     <header className="topbar">
       <div className="container topbar-inner">
-        <Link to="/" className="topbar-brand">
-          <span className="topbar-brand-icon">🍦</span>
-          <span className="topbar-brand-text neon-text">{t('brand.name')}</span>
+        <Link to="/" className="topbar-brand" aria-label={t('brand.name')}>
+          <img src={logo} alt={t('brand.name')} className="topbar-brand-logo" />
         </Link>
 
         <div className="topbar-controls">

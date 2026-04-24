@@ -5,7 +5,8 @@
       "Bash(npm view *)",
       "Bash(npm run *)",
       "Bash(taskkill //F //FI \"WINDOWTITLE eq *vite*\")",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(git -C c:/MyProg/test-shop-react diff HEAD -- src/components/layout/TopBar.tsx src/components/layout/TopBar.css src/i18n/dict.ts)"
     ]
   }
 }

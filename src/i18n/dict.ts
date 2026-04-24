@@ -2,8 +2,8 @@ import type { Lang, LocalizedText } from '../types';
 
 export const dict: Record<string, LocalizedText> = {
   // Brand
-  'brand.name': { ru: 'GELATO', en: 'GELATO' },
-  'brand.tagline': { ru: 'Настоящее мороженое', en: 'Real ice cream' },
+  'brand.name': { ru: 'SnowdropSHOP', en: 'SnowdropSHOP' },
+  'brand.tagline': { ru: 'Холодные вкусы круглый год', en: 'Cold treats all year round' },
 
   // Nav
   'nav.catalog': { ru: 'Каталог', en: 'Catalog' },
@@ -57,7 +57,7 @@ export const dict: Record<string, LocalizedText> = {
 
   // News
   'news.title': { ru: 'НОВОСТИ', en: 'NEWS' },
-  'news.subtitle': { ru: 'Что нового в мире GELATO', en: "What's new in GELATO" },
+  'news.subtitle': { ru: 'Что нового в мире SnowdropSHOP', en: "What's new at SnowdropSHOP" },
 
   // Referral
   'ref.title': { ru: 'ПРИГЛАСИ ДРУГА', en: 'INVITE A FRIEND' },
@@ -108,8 +108,8 @@ export const dict: Record<string, LocalizedText> = {
   },
   'about.story.title': { ru: 'Наша история', en: 'Our story' },
   'about.story.body': {
-    ru: 'GELATO родился в 2015 году как семейная мастерская в центре Москвы. Мы варим мороженое по итальянским рецептам с отечественными фермерскими сливками. Сегодня у нас 3 кафе и собственное производство.',
-    en: 'GELATO started in 2015 as a family workshop in central Moscow. We craft ice cream following Italian recipes with local farm cream. Today we have 3 cafés and our own production.',
+    ru: 'SnowdropSHOP родился в 2015 году как семейная мастерская в центре Москвы. Мы варим мороженое по итальянским рецептам с отечественными фермерскими сливками. Сегодня у нас 3 кафе и собственное производство.',
+    en: 'SnowdropSHOP started in 2015 as a family workshop in central Moscow. We craft ice cream following Italian recipes with local farm cream. Today we have 3 cafés and our own production.',
   },
   'about.values.title': { ru: 'Ценности', en: 'Values' },
   'about.values.body': {

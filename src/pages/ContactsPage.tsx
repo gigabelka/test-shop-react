@@ -39,7 +39,7 @@ export function ContactsPage() {
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             <Marker position={center} icon={markerIcon}>
-              <Popup>🍦 GELATO — {t('contacts.addressValue')}</Popup>
+              <Popup>❄️ SnowdropSHOP — {t('contacts.addressValue')}</Popup>
             </Marker>
           </MapContainer>
         </div>
