@@ -53,7 +53,7 @@ Reuse these unless you are deliberately redesigning; they are what the current c
 
 ## Agent skills
 
-Skills live in [.claude/skills/](.claude/skills/) — a curated subset of [mattpocock/skills](https://github.com/mattpocock/skills), vendored so they travel with the repo. The intended flow is `/grill-me` or `/grill-with-docs` → `/to-spec` → `/to-tickets` → `/implement`, with `/prototype`, `/tdd`, `/diagnosing-bugs`, `/research`, `/codebase-design`, `/domain-modeling`, `/handoff`, `/setup-pre-commit` and `/resolving-merge-conflicts` as supporting skills.
+Skills live in [.claude/skills/](.claude/skills/) — a curated subset of [mattpocock/skills](https://github.com/mattpocock/skills), vendored so they travel with the repo. The intended flow is `/grill-me` or `/grill-with-docs` → `/to-spec` → `/to-tickets` → `/implement`, with `/prototype`, `/tdd`, `/diagnosing-bugs`, `/research`, `/codebase-design`, `/domain-modeling`, `/handoff`, `/setup-pre-commit`, `/resolving-merge-conflicts`, `/improve-codebase-architecture` and `/ask-matt` (a router that picks the right skill for a situation) as supporting skills. `/writing-for-agents` covers editing the skills themselves and this file; `/setup-matt-pocock-skills` is the one-time tracker/labels setup that `/to-spec` and `/to-tickets` reference — the answers it would record are already fixed below.
 
 Matt's `code-review` skill is deliberately **not** installed — use Claude Code's built-in `/code-review`.
 
