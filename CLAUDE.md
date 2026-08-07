@@ -9,7 +9,7 @@ Single-page marketing site for "SnowdropShop", a fictional CBD store. The entry 
 Two patterns carry the whole page:
 
 - **Data layer.** [src/data/home.ts](src/data/home.ts) is a single typed module — interfaces (`Feature`, `Product`, `Reason`) and const arrays (`NAV_LINKS`, `PRODUCTS`, `REASONS`, …) with all Russian copy. Components import from it directly; there is no state management beyond local `useState` (mobile menu, newsletter form). All links are hash anchors (`#/catalog`, …).
-- **Icons.** [Icon.tsx](src/components/ui/Icon.tsx) renders inline SVG keyed off a closed `IconName` string union (15 names).
+- **Icons.** [Icon.tsx](src/components/ui/Icon.tsx) renders inline SVG keyed off a closed `IconName` string union — extend the union and the path map together when adding an icon.
 
 Styles: [theme.css](src/styles/theme.css) (design tokens) and [global.css](src/styles/global.css) (reset + utilities), both `@import`ed from [index.css](src/index.css); each component has a colocated `.css` with BEM classes off the component root.
 
