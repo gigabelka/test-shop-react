@@ -2,16 +2,18 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository. All answers must be in Russian.
 
-## Current state: skeleton, and it does not compile
+## Architecture
 
-`src/` holds three files — [main.tsx](src/main.tsx), [App.tsx](src/App.tsx), [index.css](src/index.css). An earlier version of this repo had a full homepage (layout, five home sections, inline-SVG icon/illustration modules, a design-token stylesheet); commits `68e5b14` and `4be25d8`, both labelled as Claude-settings chores, deleted all of it plus `docs/agents/`. That deletion is the intended state going forward — do not restore it unless asked. It remains recoverable from commit `4dbd032` if that ever changes.
+Single-page marketing site for "SnowdropShop", a fictional CBD store. The entry chain is [main.tsx](src/main.tsx) → [App.tsx](src/App.tsx) → [AppRouter](src/router/AppRouter.tsx), a `HashRouter` where both `/` and `*` render [HomePage](src/pages/HomePage.tsx). HomePage composes [TopBar](src/components/layout/TopBar.tsx) plus the sections in [src/components/home/](src/components/home/) (Hero, FeaturesStrip, Products, Why, Newsletter, BottomFeatures as footer).
 
-Two dangling imports are left over from the deleted tree, so `npm run typecheck` and `npm run build` currently fail:
+Two patterns carry the whole page:
 
-- `App.tsx` imports `./router/AppRouter`
-- `index.css` `@import`s `./styles/theme.css` and `./styles/global.css`
+- **Data layer.** [src/data/home.ts](src/data/home.ts) is a single typed module — interfaces (`Feature`, `Product`, `Reason`) and const arrays (`NAV_LINKS`, `PRODUCTS`, `REASONS`, …) with all Russian copy. Components import from it directly; there is no state management beyond local `useState` (mobile menu, newsletter form). All links are hash anchors (`#/catalog`, …).
+- **Icons.** [Icon.tsx](src/components/ui/Icon.tsx) renders inline SVG keyed off a closed `IconName` string union (15 names).
 
-Anything built here starts by either creating those modules or removing the imports. Assume a red baseline: a failing `npm run check` is not necessarily caused by your change.
+Styles: [theme.css](src/styles/theme.css) (design tokens) and [global.css](src/styles/global.css) (reset + utilities), both `@import`ed from [index.css](src/index.css); each component has a colocated `.css` with BEM classes off the component root.
+
+Baseline is green — `npm run check` passes on the current tree. (History note: an earlier homepage implementation was deleted in commits `68e5b14`/`4be25d8` and rebuilt since; the old multi-page version remains recoverable from `4dbd032`.)
 
 ## Commands
 
@@ -39,19 +41,19 @@ These are the things that will bite you; they are spread across four config file
 
 **Prettier owns formatting** ([.prettierrc.json](.prettierrc.json): single quotes, semicolons, width 100, trailing commas everywhere). `.prettierignore` exempts `src/assets`, `.scratch`, and `.claude/skills` — do not reformat those.
 
-## Conventions carried over from the deleted implementation
+## Conventions
 
-Reuse these unless you are deliberately redesigning; they are what the repo's history, remaining config, and skill docs assume.
+Reuse these unless you are deliberately redesigning; they are what the current code and remaining config assume.
 
 - **Russian copy, no i18n layer.** `index.html` is `lang="ru"` with a Russian title and description for "SnowdropShop", a fictional CBD store. There is no localization abstraction — do not invent one unless asked.
-- **CSS only.** No CSS-in-JS, no utility framework. The pattern was a design-token sheet plus a global reset/utilities sheet, both `@import`ed from [index.css](src/index.css), with a colocated `.css` file per component imported from its `.tsx`, and BEM class names hung off the component root (`newsletter__title`, `topbar__icon--cart`).
+- **CSS only.** No CSS-in-JS, no utility framework. The pattern is a design-token sheet plus a global reset/utilities sheet, both `@import`ed from [index.css](src/index.css), with a colocated `.css` file per component imported from its `.tsx`, and BEM class names hung off the component root (`newsletter__title`, `topbar__icon-btn`).
 - **Fonts are external.** `index.html` preconnects to Google Fonts and pulls Inter + Montserrat over the network — the only remote dependency at runtime.
-- **Graphics were code, not assets.** The prior tree had no raster images; icons and illustrations were inline SVG in TSX, keyed off closed string unions. `public/favicon.svg` is the tab icon. `public/icons.svg` is unreferenced.
-- **Unused dependencies are installed.** `leaflet`, `react-leaflet`, `qrcode.react`, and `react-router-dom` are all in `package.json` but imported nowhere in the current `src/`. They are available if a feature needs them; they are not evidence that a map, QR code, or router already exists.
+- **Graphics: raster PNGs for imagery, inline SVG for icons.** [src/assets/](src/assets/) holds 14 PNGs (logo, hero, products, avatars) cropped out of the design mockup `.scratch/asset-extraction/mockup.jpg` by [scripts/crop-assets.py](scripts/crop-assets.py) — a Pillow utility run manually, not wired into npm. UI icons stay inline SVG via [Icon.tsx](src/components/ui/Icon.tsx). `public/favicon.svg` is the tab icon. `public/icons.svg` is unreferenced.
+- **Unused dependencies are installed.** `leaflet`, `react-leaflet`, and `qrcode.react` are in `package.json` but imported nowhere in `src/`. They are available if a feature needs them; they are not evidence that a map or QR code already exists. (`react-router-dom` v7 is also installed and **is** used — by [AppRouter](src/router/AppRouter.tsx).)
 
 ## Agent skills
 
-Skills live in [.claude/skills/](.claude/skills/) — a curated subset of [mattpocock/skills](https://github.com/mattpocock/skills), vendored so they travel with the repo. The intended flow is `/grill-me` or `/grill-with-docs` → `/to-spec` → `/to-tickets` → `/implement`, with `/prototype`, `/tdd`, `/diagnosing-bugs`, `/research`, `/codebase-design`, `/domain-modeling` and `/handoff` as supporting skills.
+Skills live in [.claude/skills/](.claude/skills/) — a curated subset of [mattpocock/skills](https://github.com/mattpocock/skills), vendored so they travel with the repo. The intended flow is `/grill-me` or `/grill-with-docs` → `/to-spec` → `/to-tickets` → `/implement`, with `/prototype`, `/tdd`, `/diagnosing-bugs`, `/research`, `/codebase-design`, `/domain-modeling`, `/handoff`, `/setup-pre-commit` and `/resolving-merge-conflicts` as supporting skills.
 
 Matt's `code-review` skill is deliberately **not** installed — use Claude Code's built-in `/code-review`.
 

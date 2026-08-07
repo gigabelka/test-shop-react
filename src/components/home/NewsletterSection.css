@@ -1,0 +1,158 @@
+.newsletter {
+  padding-block: 6px 30px;
+}
+
+.newsletter__banner {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-l);
+  background: linear-gradient(
+    100deg,
+    var(--banner-from) 0%,
+    var(--banner-via) 55%,
+    var(--banner-to) 100%
+  );
+  padding: 44px 52px;
+  min-height: 190px;
+  display: flex;
+  align-items: center;
+}
+
+.newsletter__content {
+  position: relative;
+  z-index: 2;
+  max-width: 62%;
+}
+
+.newsletter__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 27px;
+  line-height: 1.15;
+  color: #fff;
+}
+
+.newsletter__subtitle {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.newsletter__form {
+  margin-top: 22px;
+  display: flex;
+  gap: 12px;
+  max-width: 480px;
+}
+
+.newsletter__input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  border-radius: var(--radius-pill);
+  padding: 14px 22px;
+  font-size: 14px;
+  color: var(--text);
+  background: #fff;
+  outline: none;
+}
+
+.newsletter__input::placeholder {
+  color: var(--muted);
+}
+
+.newsletter__button {
+  border-radius: var(--radius-pill);
+  padding: 14px 30px;
+  background: var(--blue-deep);
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+}
+
+.newsletter__button:hover {
+  background: #083199;
+}
+
+.newsletter__success {
+  margin-top: 22px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.newsletter__gift {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 112%;
+  width: auto;
+  z-index: 1;
+}
+
+.newsletter__snow {
+  position: absolute;
+  opacity: 0.25;
+  filter: brightness(0) invert(1);
+  z-index: 0;
+}
+
+.newsletter__snow--left {
+  width: 90px;
+  left: 42%;
+  top: -18px;
+}
+
+.newsletter__snow--right {
+  width: 64px;
+  right: 30%;
+  bottom: -14px;
+}
+
+@media (max-width: 1023px) {
+  .newsletter__banner {
+    padding: 32px 28px 200px;
+  }
+
+  .newsletter__content {
+    max-width: none;
+    text-align: center;
+    width: 100%;
+  }
+
+  .newsletter__form {
+    margin-inline: auto;
+  }
+
+  .newsletter__gift {
+    top: auto;
+    bottom: -30px;
+    right: 50%;
+    transform: translateX(50%);
+    height: 200px;
+  }
+
+  .newsletter__snow--left {
+    left: 6%;
+  }
+
+  .newsletter__snow--right {
+    right: 8%;
+  }
+}
+
+@media (max-width: 639px) {
+  .newsletter__title {
+    font-size: 22px;
+  }
+
+  .newsletter__form {
+    flex-direction: column;
+  }
+}
