@@ -34,7 +34,10 @@ export function ProductsSection() {
 
         <div className="products__more">
           <a href="#/catalog" className="products__more-button">
-            Перейти в каталог
+            <span className="products__more-label products__more-label--desktop">
+              Перейти в каталог
+            </span>
+            <span className="products__more-label products__more-label--mobile">Смотреть все</span>
             <Icon name="arrow" size={18} />
           </a>
         </div>

@@ -22,21 +22,21 @@ export interface Feature {
 }
 
 export const HERO_FEATURES: Feature[] = [
-  { icon: 'leaf', lines: ['100%', 'натуральный CBD'] },
+  { icon: 'cannabis', lines: ['100%', 'натуральный CBD'] },
   { icon: 'flask', lines: ['Без ГМО', 'и химии'] },
   { icon: 'shield', lines: ['Проверенное', 'качество'] },
-  { icon: 'cup', lines: ['Идеально', 'для чая'] },
+  { icon: 'cannabis', lines: ['Идеально', 'для чая'] },
 ];
 
 export const STRIP_FEATURES: Feature[] = [
-  { icon: 'leaf', lines: ['Натуральные', 'соцветия'] },
+  { icon: 'cannabis', lines: ['Натуральные', 'соцветия'] },
   { icon: 'cup', lines: ['Идеально', 'для чая'] },
   { icon: 'truck', lines: ['Быстрая и', 'надёжная доставка'] },
   { icon: 'lock', lines: ['Конфиденциальность', 'и забота'] },
 ];
 
 export const BOTTOM_FEATURES: Feature[] = [
-  { icon: 'leaf', lines: ['100%', 'натуральный CBD'] },
+  { icon: 'cannabis', lines: ['100%', 'натуральный CBD'] },
   { icon: 'flask', lines: ['Без ГМО', 'и химии'] },
   { icon: 'medal', lines: ['Проверенное', 'качество'] },
   { icon: 'cup', lines: ['Идеально', 'для чая'] },
@@ -91,12 +91,12 @@ export const REASONS: Reason[] = [
     text: 'Только проверенные сорта и лабораторный контроль',
   },
   {
-    icon: 'leaf',
+    icon: 'cannabis',
     title: '100% натурально',
     text: 'Без добавок, ГМО и вредных веществ',
   },
   {
-    icon: 'heart',
+    icon: 'cannabis',
     title: 'Для твоего баланса',
     text: 'Помогает расслабиться и справляться со стрессом',
   },

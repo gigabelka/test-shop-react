@@ -15,21 +15,22 @@ export function HeroSection() {
               Premium CBD
             </p>
             <h1 className="hero__title">
-              <span className="hero__title-line hero__title-line--dark">Натуральный CBD</span>
+              <span className="hero__title-line hero__title-line--dark">Натуральный CBD</span>{' '}
               <span className="hero__title-line hero__title-line--blue">для твоего баланса</span>
             </h1>
             <p className="hero__description">
-              Отборные соцветия конопли. Расслабление, гармония и&nbsp;польза в&nbsp;каждой чашке.
+              Отборные соцветия конопли.
+              <br />
+              Расслабление, гармония и&nbsp;польза в&nbsp;каждой чашке.
             </p>
 
             <ul className="hero__features">
               {HERO_FEATURES.map((feature) => (
-                <li key={feature.icon} className="hero__feature">
-                  <Icon name={feature.icon} size={26} className="hero__feature-icon" />
+                <li key={feature.lines[0]} className="hero__feature">
+                  <Icon name={feature.icon} size={22} className="hero__feature-icon" />
                   <span className="hero__feature-text">
-                    {feature.lines[0]}
-                    <br />
-                    {feature.lines[1]}
+                    <span className="hero__feature-line">{feature.lines[0]}</span>{' '}
+                    <span className="hero__feature-line">{feature.lines[1]}</span>
                   </span>
                 </li>
               ))}
@@ -53,8 +54,8 @@ export function HeroSection() {
                     key={avatar}
                     src={avatar}
                     alt=""
-                    width={34}
-                    height={34}
+                    width={38}
+                    height={38}
                     className="hero__avatar"
                     style={{ zIndex: index }}
                   />

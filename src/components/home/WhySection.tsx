@@ -12,8 +12,8 @@ export function WhySection() {
             src={whyMascot}
             alt="Маскот SnowdropShop"
             className="why__mascot"
-            width={385}
-            height={370}
+            width={393}
+            height={354}
           />
           <div className="why__content">
             <h2 className="section-title why__title">Почему SnowdropShop?</h2>

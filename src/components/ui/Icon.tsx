@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 export type IconName =
   | 'leaf'
+  | 'cannabis'
   | 'cup'
   | 'truck'
   | 'lock'
@@ -17,7 +18,25 @@ export type IconName =
   | 'snow'
   | 'check';
 
-const STROKE_PATHS: Record<Exclude<IconName, 'star'>, ReactNode> = {
+const FILLED_PATHS: Record<'star' | 'cannabis', ReactNode> = {
+  star: (
+    <path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2L12 17.2 6.4 20l1.1-6.2L2.9 9.4l6.3-.9L12 2.8Z" />
+  ),
+  cannabis: (
+    <>
+      <path d="M12 2.4c1 2.7 1.1 5.8 0 8.9-1.1-3.1-1-6.2 0-8.9Z" />
+      <path d="M6.6 4.2c1.8 2.1 3 4.7 4.1 7.6-2.5-1.6-3.8-4.3-4.1-7.6Z" />
+      <path d="M17.4 4.2c-1.8 2.1-3 4.7-4.1 7.6 2.5-1.6 3.8-4.3 4.1-7.6Z" />
+      <path d="M3.5 8.4c2.3 1.6 4.1 3.9 5.7 6.6-2.9-1-5-3.3-5.7-6.6Z" />
+      <path d="M20.5 8.4c-2.3 1.6-4.1 3.9-5.7 6.6 2.9-1 5-3.3 5.7-6.6Z" />
+      <path d="M3.1 13.4c2.5.9 4.7 2.4 6.6 4.7-3-.3-5.4-2-6.6-4.7Z" />
+      <path d="M20.9 13.4c-2.5.9-4.7 2.4-6.6 4.7 3-.3 5.4-2 6.6-4.7Z" />
+      <path d="M11.4 13.6h1.2l-.35 7.9h-.5l-.35-7.9Z" />
+    </>
+  ),
+};
+
+const STROKE_PATHS: Record<Exclude<IconName, keyof typeof FILLED_PATHS>, ReactNode> = {
   leaf: (
     <>
       <path d="M5.5 18.5C5.5 9.5 11 4.5 19.5 4.5c0 8.5-5 14-14 14Z" />
@@ -106,7 +125,8 @@ interface IconProps {
 }
 
 export function Icon({ name, size = 24, className, title }: IconProps) {
-  const filled = name === 'star';
+  const filledPath = (FILLED_PATHS as Partial<Record<IconName, ReactNode>>)[name];
+  const filled = filledPath !== undefined;
   return (
     <svg
       width={size}
@@ -122,11 +142,7 @@ export function Icon({ name, size = 24, className, title }: IconProps) {
       aria-hidden={title ? undefined : true}
     >
       {title ? <title>{title}</title> : null}
-      {filled ? (
-        <path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2L12 17.2 6.4 20l1.1-6.2L2.9 9.4l6.3-.9L12 2.8Z" />
-      ) : (
-        STROKE_PATHS[name]
-      )}
+      {filled ? filledPath : STROKE_PATHS[name as keyof typeof STROKE_PATHS]}
     </svg>
   );
 }

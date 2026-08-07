@@ -32,10 +32,10 @@ export function TopBar() {
           <button
             className="topbar__icon-btn topbar__cart"
             type="button"
-            aria-label="Корзина, 2 товара"
+            aria-label="Корзина, 3 товара"
           >
             <Icon name="cart" size={22} />
-            <span className="topbar__badge">2</span>
+            <span className="topbar__badge">3</span>
           </button>
           <button
             className="topbar__icon-btn topbar__burger"

@@ -3,19 +3,21 @@
 }
 
 .why__card {
-  display: grid;
-  grid-template-columns: minmax(300px, 42%) 1fr;
-  align-items: center;
-  gap: 40px;
+  position: relative;
   border-radius: var(--radius-l);
-  background: linear-gradient(160deg, var(--sky) 0%, var(--sky-light) 60%, #eaf3fc 100%);
-  padding: 30px 44px 30px 30px;
+  background: linear-gradient(160deg, #fcfdfe 0%, #f1f5fc 100%);
+  padding: 26px 44px 26px 42%;
+  min-height: 316px;
+  display: flex;
+  align-items: center;
 }
 
 .why__mascot {
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-m);
+  position: absolute;
+  left: 14px;
+  bottom: -2px;
+  height: 400px;
+  width: auto;
 }
 
 .why__title {
@@ -60,29 +62,76 @@
 
 @media (max-width: 1023px) {
   .why__card {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    display: block;
     padding: 24px;
+    min-height: 0;
   }
 
   .why__mascot {
-    max-width: 360px;
-    margin-inline: auto;
+    position: static;
+    display: block;
+    width: min(360px, 100%);
+    height: auto;
+    margin: 0 auto 20px;
+    border-radius: var(--radius-m);
   }
 }
 
 @media (max-width: 639px) {
+  .why__card {
+    display: grid;
+    grid-template-columns: 46% 1fr;
+    gap: 8px 14px;
+    padding: 20px;
+    align-items: center;
+  }
+
+  .why__content {
+    display: contents;
+  }
+
   .why__title {
-    font-size: 22px;
-    text-align: center;
+    grid-column: 1 / -1;
+    grid-row: 1;
+    font-size: 18px;
+    text-align: left;
+  }
+
+  .why__mascot {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    margin: 0;
   }
 
   .why__reasons {
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: 0;
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
   }
 
   .why__reason {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    gap: 8px;
     align-items: center;
+  }
+
+  .why__reason-icon {
+    width: 18px;
+    height: 18px;
+    margin-top: 0;
+  }
+
+  .why__reason-title {
+    font-size: 12px;
+  }
+
+  .why__reason-text {
+    font-size: 10.5px;
+    margin-top: 2px;
   }
 }

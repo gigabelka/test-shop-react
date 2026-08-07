@@ -123,6 +123,20 @@ def paint_from_below(crop: Image.Image, pad: int, *rects) -> Image.Image:
     return crop
 
 
+def paint_from_above(crop: Image.Image, pad: int, *rects) -> Image.Image:
+    """Заливает прямоугольники, продолжая вниз цвет каждой колонки
+    из строки y0-pad — для мусора над однородным небом карточки."""
+    px = crop.load()
+    w, h = crop.size
+    for x0, y0, x1, y1 in rects:
+        src_y = max(y0 - pad, 0)
+        for x in range(max(0, x0), min(w, x1)):
+            r, g, b, _ = px[x, src_y]
+            for y in range(max(0, y0), min(h, y1)):
+                px[x, y] = (r, g, b, 255)
+    return crop
+
+
 def color_key(crop: Image.Image, is_bg, feather: float = 1.0) -> Image.Image:
     """Простое вырезание по цвету: is_bg(r, g, b) -> 0..1 (1 = фон)."""
     rgba = crop.convert('RGBA')
@@ -175,15 +189,24 @@ def snow_bg(r, g, b):
 save(color_key(crop((28, 26, 244, 110)), logo_bg), 'logo.png')
 
 # --- Hero: маскот + продукты (фон карточки оставляем, снимаем только белое над ней) ---
-hero = flood_key(crop((505, 55, 1053, 770)), white_strict, feather=0)
-hero = wipe(hero, (0, 0, 450, 24), (450, 0, 548, 48))
-hero = paint_from_below(hero, 8, (0, 398, 34, 438))
-hero = feather_edges(hero, left=40, top=8, right=8)
+# x0=450 — чайник входит целиком; голова маскота выходит за верх карточки (как в макете).
+hero_raw = crop((450, 55, 1053, 770)).convert('RGB')
+# остатки меню и иконок шапки над карточкой — заливаем белым, flood_key их снимет
+ImageDraw.Draw(hero_raw).rectangle((0, 0, 290, 30), fill=(255, 255, 255))
+ImageDraw.Draw(hero_raw).rectangle((405, 0, 603, 30), fill=(255, 255, 255))
+hero = flood_key(hero_raw, white_strict, feather=0)
+# фрагменты текста/кнопки внутри карточки слева — закрашиваем цветом неба
+hero = paint_from_above(hero, 8, (0, 110, 12, 190))  # край заголовка
+hero = paint_from_below(hero, 8, (0, 385, 85, 455))  # фича «Идеально для чая»
+hero = paint_from_above(hero, 8, (0, 475, 28, 530))  # край кнопки «Узнать больше»
+hero = feather_edges(hero, left=45, top=8, right=8)
+hero.putalpha(hero.getchannel('A').filter(ImageFilter.GaussianBlur(1.2)))
 save(hero, 'hero-scene.png')
 
 # --- Hero: чашка + стол слева ---
 cup = flood_key(crop((330, 600, 560, 770)), white_strict, feather=0)
-cup = wipe(cup, (0, 0, 30, 70))
+# (0,0,30,70) — мусор слева сверху; (160,0,230,96) — фрагмент чайника справа сверху
+cup = wipe(cup, (0, 0, 30, 70), (160, 0, 230, 96))
 cup = feather_edges(cup, left=22, top=26, right=14)
 save(cup, 'hero-cup.png')
 
@@ -202,7 +225,7 @@ for name, box in products.items():
     save(flood_key(crop(box), white_soft), name)
 
 # --- Маскот «Почему SnowdropShop?» (карточка со снежинками остаётся) ---
-why = flood_key(crop((30, 1400, 415, 1770)), white_strict, feather=0)
+why = flood_key(crop((22, 1408, 415, 1762)), white_strict, feather=0)
 why = wipe(why, (355, 0, 385, 60))
 why = feather_edges(why, left=8, top=6, right=10, bottom=8)
 save(why, 'why-mascot.png')

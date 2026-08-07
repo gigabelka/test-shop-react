@@ -122,19 +122,14 @@
 
   .newsletter__content {
     max-width: none;
-    text-align: center;
     width: 100%;
-  }
-
-  .newsletter__form {
-    margin-inline: auto;
   }
 
   .newsletter__gift {
     top: auto;
     bottom: -30px;
-    right: 50%;
-    transform: translateX(50%);
+    right: 24px;
+    transform: none;
     height: 200px;
   }
 
@@ -149,7 +144,7 @@
 
 @media (max-width: 639px) {
   .newsletter__title {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .newsletter__form {
