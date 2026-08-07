@@ -1,23 +1,7 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm install *)",
-      "Bash(npm view *)",
-      "Bash(npm run *)",
-      "Bash(taskkill //F //FI \"WINDOWTITLE eq *vite*\")",
-      "Bash(npx tsc *)",
-      "Bash(git -C c:/MyProg/test-shop-react diff HEAD -- src/components/layout/TopBar.tsx src/components/layout/TopBar.css src/i18n/dict.ts)",
-      "Bash(npx eslint-config-prettier *)",
-      "Bash(git stash *)",
-      "Bash(npx eslint *)",
-      "Read(//tmp/**)",
-      "mcp__playwright__browser_resize",
-      "mcp__playwright__browser_navigate",
-      "mcp__playwright__browser_take_screenshot",
-      "Bash(mkdir -p \"C:/Users/viktor/AppData/Local/Temp/claude/c--MyProjects-test-shop-react/ee42020a-2c9a-45f0-80b7-c86b10d43be5/scratchpad/png/svg\")",
-      "Bash(npm init *)",
-      "Bash(npm i *)",
-      "Bash(node render.mjs)"
+
     ]
   }
 }
