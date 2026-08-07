@@ -1,0 +1,29 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.logo__text {
+  font-family: 'Segoe Script', 'Brush Script MT', 'Lucida Handwriting', cursive;
+  font-size: 30px;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.logo--blue .logo__text {
+  color: var(--blue-700);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.logo--white .logo__text {
+  color: #ffffff;
+}
+
+@media (max-width: 560px) {
+  .logo__text {
+    font-size: 24px;
+  }
+}

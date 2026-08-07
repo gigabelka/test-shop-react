@@ -1,0 +1,155 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - link "SnowdropShop — на главную" [ref=e6] [cursor=pointer]:
+        - /url: "#/"
+        - generic [ref=e7]: SnowdropShop
+      - navigation "Основная навигация" [ref=e9]:
+        - list [ref=e10]:
+          - listitem [ref=e11]:
+            - link "Каталог" [ref=e12] [cursor=pointer]:
+              - /url: "#/"
+          - listitem [ref=e13]:
+            - link "О нас" [ref=e14] [cursor=pointer]:
+              - /url: "#/"
+          - listitem [ref=e15]:
+            - link "Доставка и оплата" [ref=e16] [cursor=pointer]:
+              - /url: "#/"
+          - listitem [ref=e17]:
+            - link "Отзывы" [ref=e18] [cursor=pointer]:
+              - /url: "#/"
+          - listitem [ref=e19]:
+            - link "Контакты" [ref=e20] [cursor=pointer]:
+              - /url: "#/"
+      - generic [ref=e21]:
+        - button "Поиск" [ref=e22] [cursor=pointer]
+        - button "Личный кабинет" [ref=e26] [cursor=pointer]
+        - button "Корзина" [ref=e30] [cursor=pointer]:
+          - generic [ref=e35]: "1"
+  - main [ref=e36]:
+    - generic [ref=e37]:
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - generic [ref=e42]: Premium CBD
+          - heading "Натуральный CBD для твоего баланса" [level=1] [ref=e48]:
+            - text: Натуральный CBD
+            - generic [ref=e49]: для твоего баланса
+          - paragraph [ref=e50]: Отборные соцветия конопли.Расслабление, гармония и польза в каждой чашке.
+          - list [ref=e51]:
+            - listitem [ref=e52]:
+              - generic [ref=e62]: 100% натуральный CBD
+            - listitem [ref=e63]:
+              - generic [ref=e68]: Без ГМО и химии
+            - listitem [ref=e69]:
+              - generic [ref=e74]: Проверенное качество
+            - listitem [ref=e75]:
+              - generic [ref=e81]: Идеально для чая
+          - generic [ref=e82]:
+            - link "Перейти в каталог" [ref=e83] [cursor=pointer]:
+              - /url: "#/"
+            - link "Узнать больше" [ref=e86] [cursor=pointer]:
+              - /url: "#/"
+          - generic [ref=e119]:
+            - paragraph [ref=e120]: Более 5000 довольныхклиентов по всей стране
+            - generic "Рейтинг 5 из 5" [ref=e121]
+        - generic [ref=e132]:
+          - img "Маскот SnowdropShop показывает жест «отлично»" [ref=e133]
+          - generic [ref=e162]:
+            - img "Упаковка CBD Flower Tea" [ref=e163]
+            - img "Флакон масла CBD с пипеткой" [ref=e172]
+            - img "Банка капсул CBD" [ref=e185]
+            - img "Стеклянный чайник с чаем CBD" [ref=e198]
+            - img "Соцветия CBD в деревянной пиале" [ref=e239]
+            - generic [ref=e292]:
+              - text: 100%
+              - strong [ref=e293]: Natural
+      - list [ref=e296]:
+        - listitem [ref=e297]:
+          - generic [ref=e307]: Натуральные соцветия
+        - listitem [ref=e308]:
+          - generic [ref=e314]: Идеально для чая
+        - listitem [ref=e315]:
+          - generic [ref=e323]: Быстрая и надёжная доставка
+        - listitem [ref=e324]:
+          - generic [ref=e329]: Конфиденциальность и забота
+      - generic [ref=e331]:
+        - generic [ref=e332]:
+          - heading "Наши продукты" [level=2] [ref=e333]
+          - paragraph [ref=e344]: Премиальный CBD для твоего комфорта
+        - list [ref=e345]:
+          - listitem [ref=e346]:
+            - generic [ref=e347]:
+              - heading "Цветы CBD" [level=3] [ref=e348]
+              - paragraph [ref=e349]: Отборные соцветия высшего качества
+            - img "Соцветия CBD в деревянной пиале" [ref=e351]
+            - link "Смотреть" [ref=e404] [cursor=pointer]:
+              - /url: "#/"
+          - listitem [ref=e405]:
+            - generic [ref=e406]:
+              - heading "Масла CBD" [level=3] [ref=e407]
+              - paragraph [ref=e408]: Натуральные масла для баланса
+            - img "Флакон масла CBD с пипеткой" [ref=e410]
+            - link "Смотреть" [ref=e423] [cursor=pointer]:
+              - /url: "#/"
+          - listitem [ref=e424]:
+            - generic [ref=e425]:
+              - heading "Капсулы CBD" [level=3] [ref=e426]
+              - paragraph [ref=e427]: Удобство и точная дозировка
+            - img "Банка капсул CBD" [ref=e429]
+            - link "Смотреть" [ref=e442] [cursor=pointer]:
+              - /url: "#/"
+          - listitem [ref=e443]:
+            - generic [ref=e444]:
+              - heading "Чай CBD" [level=3] [ref=e445]
+              - paragraph [ref=e446]: Вкусный чай для релаксации
+            - img "Стеклянный чайник с чаем CBD" [ref=e448]
+            - link "Смотреть" [ref=e489] [cursor=pointer]:
+              - /url: "#/"
+        - link "Перейти в каталог" [ref=e491] [cursor=pointer]:
+          - /url: "#/"
+      - generic [ref=e496]:
+        - img "Маскот SnowdropShop со сложенными ладонями" [ref=e498]
+        - generic [ref=e524]:
+          - heading "Почему SnowdropShop?" [level=2] [ref=e525]
+          - list [ref=e526]:
+            - listitem [ref=e527]:
+              - generic [ref=e532]:
+                - heading "Премиальное качество" [level=3] [ref=e533]
+                - paragraph [ref=e534]: Только проверенные сорта и лабораторный контроль
+            - listitem [ref=e535]:
+              - generic [ref=e545]:
+                - heading "100% натурально" [level=3] [ref=e546]
+                - paragraph [ref=e547]: Без добавок, ГМО и вредных веществ
+            - listitem [ref=e548]:
+              - generic [ref=e552]:
+                - heading "Для твоего баланса" [level=3] [ref=e553]
+                - paragraph [ref=e554]: Помогает расслабиться и справиться со стрессом
+            - listitem [ref=e555]:
+              - generic [ref=e560]:
+                - heading "Сделано с заботой" [level=3] [ref=e561]
+                - paragraph [ref=e562]: Мы ценим каждого клиента и его доверие
+      - generic [ref=e565]:
+        - generic [ref=e566]:
+          - heading "Подпишись и получи 10% скидку" [level=2] [ref=e567]
+          - paragraph [ref=e568]: Будь в курсе новинок и акций
+          - generic [ref=e569]:
+            - generic [ref=e570]: Твой e-mail
+            - textbox "Твой e-mail" [ref=e571]
+            - button "Подписаться" [ref=e572] [cursor=pointer]
+        - generic [ref=e573]:
+          - img "Подарок — скидка 10%" [ref=e574]
+          - generic [ref=e582]: 10%
+  - contentinfo [ref=e583]:
+    - list [ref=e585]:
+      - listitem [ref=e586]:
+        - generic [ref=e596]: 100% натуральный CBD
+      - listitem [ref=e597]:
+        - generic [ref=e602]: Без ГМО и химии
+      - listitem [ref=e603]:
+        - generic [ref=e608]: Проверенное качество
+      - listitem [ref=e609]:
+        - generic [ref=e615]: Идеально для чая
+      - listitem [ref=e616]:
+        - generic [ref=e624]: Быстрая доставка
+      - listitem [ref=e625]:
+        - generic [ref=e630]: Конфиденциальность и забота

@@ -9,7 +9,11 @@
       "Bash(git -C c:/MyProg/test-shop-react diff HEAD -- src/components/layout/TopBar.tsx src/components/layout/TopBar.css src/i18n/dict.ts)",
       "Bash(npx eslint-config-prettier *)",
       "Bash(git stash *)",
-      "Bash(npx eslint *)"
+      "Bash(npx eslint *)",
+      "Read(//tmp/**)",
+      "mcp__playwright__browser_resize",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot"
     ]
   }
 }

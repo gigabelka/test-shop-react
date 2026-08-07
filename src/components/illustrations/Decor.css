@@ -1,0 +1,30 @@
+.snowfall {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  color: var(--blue-400);
+}
+
+.snowfall__flake {
+  position: absolute;
+  display: block;
+}
+
+.avatar-stack {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-stack__item {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(20, 49, 110, 0.15);
+  margin-left: -10px;
+}
+
+.avatar-stack__item:first-child {
+  margin-left: 0;
+}

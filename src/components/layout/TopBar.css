@@ -1,0 +1,136 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--bg);
+}
+
+.topbar__inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: var(--topbar-height);
+}
+
+.topbar__logo {
+  flex: none;
+}
+
+.topbar__nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.topbar__links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.topbar__links a {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.topbar__links a:hover {
+  color: var(--blue-600);
+}
+
+.topbar__actions {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.topbar__icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: var(--navy);
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.topbar__icon:hover {
+  background: var(--blue-50);
+  color: var(--blue-600);
+}
+
+.topbar__badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  border-radius: var(--radius-pill);
+  background: var(--blue-600);
+  color: #ffffff;
+  font-family: var(--ff-display);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 17px;
+  text-align: center;
+}
+
+.topbar__burger {
+  display: none;
+}
+
+.topbar__drawer {
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+  box-shadow: var(--shadow-card);
+}
+
+.topbar__drawer ul {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 20px 16px;
+}
+
+.topbar__drawer a {
+  display: block;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .topbar__nav {
+    display: none;
+  }
+
+  .topbar__burger {
+    display: grid;
+  }
+
+  .topbar__inner {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 560px) {
+  .topbar__inner {
+    height: 64px;
+    gap: 8px;
+  }
+
+  .topbar__actions {
+    gap: 2px;
+  }
+
+  .topbar__icon {
+    width: 34px;
+    height: 34px;
+  }
+}
