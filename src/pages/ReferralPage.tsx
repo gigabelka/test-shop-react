@@ -56,7 +56,12 @@ export function ReferralPage() {
         </div>
 
         <div className="ref-link-row">
-          <input className="ref-link-input" value={refLink} readOnly aria-label={t('ref.yourLink')} />
+          <input
+            className="ref-link-input"
+            value={refLink}
+            readOnly
+            aria-label={t('ref.yourLink')}
+          />
           <button type="button" className="ref-btn" onClick={copy}>
             {copied ? t('ref.copied') : t('ref.copy')}
           </button>

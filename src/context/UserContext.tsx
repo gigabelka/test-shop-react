@@ -20,12 +20,9 @@ export function UserProvider({ children }: { children: ReactNode }) {
   const user = mockUser;
   const spent = user.orders.reduce((acc, o) => acc + o.total, 0);
 
-  const currentIdx = [...TIER_THRESHOLDS]
-    .reverse()
-    .find((t) => spent >= t.minSpent)!;
+  const currentIdx = [...TIER_THRESHOLDS].reverse().find((t) => spent >= t.minSpent)!;
   const current = currentIdx.tier;
-  const next =
-    TIER_THRESHOLDS.find((t) => t.minSpent > spent)?.tier ?? null;
+  const next = TIER_THRESHOLDS.find((t) => t.minSpent > spent)?.tier ?? null;
   const nextThreshold = TIER_THRESHOLDS.find((t) => t.tier === next)?.minSpent ?? spent;
   const toNext = next ? nextThreshold - spent : 0;
   const prevThreshold = TIER_THRESHOLDS.find((t) => t.tier === current)?.minSpent ?? 0;
@@ -35,9 +32,7 @@ export function UserProvider({ children }: { children: ReactNode }) {
 
   const tierProgress = { current, next, spent, toNext, pct };
 
-  return (
-    <UserContext.Provider value={{ user, tierProgress }}>{children}</UserContext.Provider>
-  );
+  return <UserContext.Provider value={{ user, tierProgress }}>{children}</UserContext.Provider>;
 }
 
 export function useUser(): UserContextValue {

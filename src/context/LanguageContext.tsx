@@ -29,9 +29,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const setLang = (l: Lang) => setLangState(l);
 
-  return (
-    <LanguageContext.Provider value={{ lang, setLang }}>{children}</LanguageContext.Provider>
-  );
+  return <LanguageContext.Provider value={{ lang, setLang }}>{children}</LanguageContext.Provider>;
 }
 
 export function useLanguage(): LanguageContextValue {

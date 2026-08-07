@@ -72,12 +72,12 @@ export function AccountPage() {
             <article key={o.id} className="acc-order">
               <div className="acc-order-head">
                 <div>
-                  <div className="acc-order-id">{t('acc.order')} #{o.id}</div>
+                  <div className="acc-order-id">
+                    {t('acc.order')} #{o.id}
+                  </div>
                   <div className="acc-order-date">{fmtDate(o.date)}</div>
                 </div>
-                <div className="acc-order-total">
-                  {o.total} ₽
-                </div>
+                <div className="acc-order-total">{o.total} ₽</div>
               </div>
               <ul className="acc-order-items">
                 {o.items.map((it) => {

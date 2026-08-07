@@ -3,14 +3,7 @@ export type Lang = 'ru' | 'en';
 export type Theme = 'dark' | 'light';
 
 export type CategoryId =
-  | 'classic'
-  | 'fruit'
-  | 'premium'
-  | 'vegan'
-  | 'kids'
-  | 'sorbet'
-  | 'cake'
-  | 'seasonal';
+  'classic' | 'fruit' | 'premium' | 'vegan' | 'kids' | 'sorbet' | 'cake' | 'seasonal';
 
 export interface LocalizedText {
   ru: string;

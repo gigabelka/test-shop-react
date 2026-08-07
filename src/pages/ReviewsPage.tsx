@@ -71,9 +71,7 @@ export function ReviewsPage() {
       ) : (
         <div className="rev-list">
           {filtered.map((r) => {
-            const product = r.productId
-              ? products.find((p) => p.id === r.productId)
-              : undefined;
+            const product = r.productId ? products.find((p) => p.id === r.productId) : undefined;
             return (
               <article key={r.id} className="rev-card">
                 <div className="rev-head">

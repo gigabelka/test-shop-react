@@ -35,7 +35,7 @@ export function ContactsPage() {
         <div className="contacts-map">
           <MapContainer center={center} zoom={14} style={{ height: '100%', width: '100%' }}>
             <TileLayer
-              attribution='&copy; OpenStreetMap contributors'
+              attribution="&copy; OpenStreetMap contributors"
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             <Marker position={center} icon={markerIcon}>

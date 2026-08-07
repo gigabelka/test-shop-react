@@ -18,25 +18,50 @@ No test runner is configured.
 Single-page React 18 + TypeScript + Vite storefront for a fictional gelato shop. All data is static (in `src/data/`) — no backend, no API calls. State lives in React contexts and `localStorage`.
 
 ### Build / deploy specifics
+
 - `vite.config.ts` sets `base: '/test-shop-react/'` for GitHub Pages hosting. Any absolute asset path must respect this base.
 - Routing uses `HashRouter` (see [src/router/AppRouter.tsx](src/router/AppRouter.tsx)) specifically so GitHub Pages can serve the SPA without server-side rewrites. Do not swap to `BrowserRouter` without also solving the 404 problem.
 - The React Compiler is enabled via `@rolldown/plugin-babel` + `babel-plugin-react-compiler` (target '18'), and ESLint enforces `react-compiler/react-compiler: error`. Write components that satisfy the Rules of React — the compiler will memoize automatically, so avoid manual `useMemo`/`useCallback` unless there's a specific reason.
 
 ### Provider stack
+
 [src/App.tsx](src/App.tsx) composes four context providers in this order (outer → inner): `ThemeProvider` → `LanguageProvider` → `UserProvider` → `CartProvider`, then `AppRouter`. Each context in [src/context/](src/context/) exposes a `useXxx` hook that throws if called outside its provider. `CartContext` and `ThemeContext` persist to `localStorage` (keys `shop.cart`, etc.) and rehydrate on load.
 
 ### Layout / routing
+
 Every route renders inside [Layout](src/components/layout/Layout.tsx) (TopBar + `<Outlet />` + BottomNav). Routes are declared flat in [AppRouter.tsx](src/router/AppRouter.tsx); unknown paths redirect to `/`. When adding a page: create `PageName.tsx` + `PageName.css` in [src/pages/](src/pages/), register the route, and add nav entries/translation keys.
 
 ### i18n
+
 All user-facing strings go through the translation layer:
+
 - `LocalizedText = { ru: string; en: string }` ([src/types/index.ts](src/types/index.ts))
 - Static UI strings live in [src/i18n/dict.ts](src/i18n/dict.ts) keyed by dotted namespace (`nav.*`, `catalog.*`, etc.)
 - [useTranslation](src/i18n/useTranslation.ts) returns `t(key)` for dict lookups and `tl(localizedText)` for inline `LocalizedText` objects (used on product/news/review data).
 - When adding UI copy, add both `ru` and `en` entries; the picker falls back per `pickLocale` in `dict.ts`.
 
 ### Data model
+
 Domain types are centralized in [src/types/index.ts](src/types/index.ts) (`Product`, `NewsItem`, `Certificate`, `User`, `CartItem`, `Review`, `SortKey`, `CategoryId`, `Tier`). Data is hardcoded in [src/data/](src/data/) — `products.ts` is the source of truth for pricing that `CartContext.total` multiplies against `CartItem.qty`.
 
 ### Styling
+
 Global styles + CSS variables (theme tokens) live in [src/styles/](src/styles/) (`global.css`, `theme.css`). Theme switching toggles a class/attribute consumed by those variables. Each page/component ships a colocated `.css` file — keep that convention rather than introducing CSS-in-JS or a utility framework.
+
+### Formatting
+
+Prettier owns formatting (`.prettierrc.json`); `eslint-config-prettier` sits last in the ESLint `extends` chain so stylistic rules never fight it. Run `npm run format` to write, `npm run check` for typecheck + lint + format check in one go.
+
+## Agent skills
+
+Skills live in [.claude/skills/](.claude/skills/) — a curated subset of [mattpocock/skills](https://github.com/mattpocock/skills), copied in so they travel with the repo. The flow is `/grill-me` or `/grill-with-docs` → `/to-spec` → `/to-tickets` → `/implement`, with `/prototype`, `/tdd`, `/diagnosing-bugs`, `/research` and `/handoff` as supporting skills.
+
+Matt's `code-review` skill is deliberately **not** installed — use Claude Code's built-in `/code-review`.
+
+### Issue tracker
+
+Local markdown under `.scratch/<feature-slug>/`. See [docs/agents/issue-tracker.md](docs/agents/issue-tracker.md).
+
+### Domain docs
+
+Single-context: `CONTEXT.md` + `docs/adr/` at the repo root, both created lazily by `/domain-modeling`. See [docs/agents/domain.md](docs/agents/domain.md).

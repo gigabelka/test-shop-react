@@ -7,7 +7,9 @@
   flex-direction: column;
   align-items: center;
   gap: 18px;
-  box-shadow: 0 0 0 4px rgba(57, 255, 20, 0.08), var(--shadow-card);
+  box-shadow:
+    0 0 0 4px rgba(57, 255, 20, 0.08),
+    var(--shadow-card);
   max-width: 560px;
   margin: 12px auto 24px;
 }

@@ -39,9 +39,7 @@ export function BottomNav() {
           >
             <span className="bottomnav-icon" aria-hidden>
               {item.icon}
-              {item.to === '/cart' && count > 0 && (
-                <span className="bottomnav-badge">{count}</span>
-              )}
+              {item.to === '/cart' && count > 0 && <span className="bottomnav-badge">{count}</span>}
             </span>
           </NavLink>
         ))}
