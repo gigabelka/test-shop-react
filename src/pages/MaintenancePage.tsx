@@ -15,6 +15,7 @@ export function MaintenancePage() {
           alt="SnowdropSHOP — ведутся технические работы. Скоро вернёмся!"
           width={720}
           height={1280}
+          draggable={false}
         />
         <h1 className="visually-hidden">Ведутся технические работы</h1>
         <p className="visually-hidden">
@@ -23,15 +24,11 @@ export function MaintenancePage() {
         <a
           className="maintenance__link maintenance__link--telegram"
           href={TELEGRAM_URL}
-          target="_blank"
-          rel="noopener noreferrer"
           aria-label="Telegram: t.me/SNOWDROPSHOP_1"
         />
         <a
           className="maintenance__link maintenance__link--vk"
           href={VK_URL}
-          target="_blank"
-          rel="noopener noreferrer"
           aria-label="ВКонтакте: vk.ru/snowdropshop_1"
         />
       </div>
