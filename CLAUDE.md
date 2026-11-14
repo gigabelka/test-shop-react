@@ -9,7 +9,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run preview` — serve the built bundle locally
 - `npm run lint` — ESLint across the repo (flat config, type-checked rules)
 - `npx tsc --noEmit` — type-check only, no build
-- `npm run deploy` — `predeploy` runs the build, then `gh-pages` publishes `dist/` to the `gh-pages` branch. Live site: https://ibelka.ru/ (custom domain via `public/CNAME`)
+- `npm run deploy` — `predeploy` runs the build, then `gh-pages` publishes `dist/` to the `gh-pages` branch. Live site: https://snowdropshop.ru/ (custom domain via `public/CNAME`)
 
 No test runner is configured.
 
@@ -23,7 +23,7 @@ The site is currently a **single maintenance stub page** ("Ведутся тех
 
 ### Build / deploy specifics
 
-- `vite.config.ts` sets `base: '/'` because the site is served from the root of the custom domain ibelka.ru. Import assets through Vite (as the poster is) so the base is respected.
+- `vite.config.ts` sets `base: '/'` because the site is served from the root of the custom domain snowdropshop.ru. Import assets through Vite (as the poster is) so the base is respected.
 - The React Compiler is enabled via `@rolldown/plugin-babel` + `babel-plugin-react-compiler` (target '18'), and ESLint enforces `react-compiler/react-compiler: error`.
 
 ### Formatting
