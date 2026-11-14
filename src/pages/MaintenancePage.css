@@ -1,0 +1,80 @@
+.maintenance {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #0b4fb3;
+}
+
+/* Blurred copy of the poster fills the sides on wide screens. */
+.maintenance::before {
+  content: '';
+  position: absolute;
+  inset: -40px;
+  background: var(--poster) center / cover no-repeat;
+  filter: blur(28px) brightness(0.85);
+}
+
+.maintenance__poster {
+  position: relative;
+  height: 100vh;
+  height: 100dvh;
+  max-width: 100vw;
+  aspect-ratio: 720 / 1280;
+  box-shadow: 0 0 60px rgb(0 0 0 / 0.35);
+}
+
+.maintenance__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+}
+
+.maintenance__link {
+  position: absolute;
+  left: 14%;
+  width: 72%;
+  height: 5.4%;
+  border-radius: 999px;
+  transition:
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.maintenance__link--telegram {
+  top: 81.2%;
+}
+
+.maintenance__link--vk {
+  top: 87.6%;
+}
+
+.maintenance__link:hover,
+.maintenance__link:focus-visible {
+  background-color: rgb(255 255 255 / 0.12);
+  box-shadow: 0 0 24px rgb(120 200 255 / 0.8);
+  outline: none;
+}
+
+.maintenance__link:focus-visible {
+  box-shadow:
+    0 0 0 3px #fff,
+    0 0 24px rgb(120 200 255 / 0.8);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}

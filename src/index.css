@@ -1,3 +1,15 @@
-@import './styles/theme.css';
-@import './styles/global.css';
-@import 'leaflet/dist/leaflet.css';
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: #0b4fb3;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+}
